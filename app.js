@@ -40,6 +40,14 @@ const LANG_NAMES = {
 
 const RTL = new Set(['ar']);
 
+/**
+ * Языки, где подзаголовок после тире принято начинать со строчной.
+ * В английском и немецком так делать нельзя: «Track how…» и слова
+ * с заглавной там уместны, а в немецком существительные обязаны быть
+ * с большой буквы. Поэтому список явный, а не «понижать везде».
+ */
+const LOWER_AFTER_DASH = new Set(['ru', 'uk']);
+
 /** Язык по стране, определённой геолокацией. */
 const COUNTRY_LANG = {
   RU:'ru', BY:'ru', KZ:'ru', KG:'ru', TJ:'ru', UZ:'ru', MD:'ru',
@@ -92,7 +100,7 @@ const T = {
     installLeft:'Напоминание {n} из 5 — потом исчезнет',
     tagline:'Как меняется прогноз погоды',
     metaDescr:'Как менялся прогноз на каждый час за последние восемь обновлений модели: разброс, тренд и графики. Данные Open-Meteo, работает целиком в браузере.',
-    shareText:'Показывает разброс между обновлениями модели на каждый час — видно, насколько прогнозу можно верить.',
+    shareText:'Показывает разброс между обновлениями модели на каждый час — видно динамику прогноза.',
     src:'Данные: Open-Meteo, CC BY 4.0. Работает полностью в браузере, без сервера.',
   },
   en: {
@@ -1154,7 +1162,7 @@ function applyStaticStrings() {
   el.footerSrc.textContent = t('src');
 
   // Заголовок вкладки и описание для поиска/превью ссылки
-  document.title = `${APP_NAME} — ${t('tagline')}`;
+  document.title = `${APP_NAME} — ${taglineAfterDash()}`;
   const set = (sel, attr, val) => {
     const n = document.querySelector(sel);
     if (n) n.setAttribute(attr, val);
@@ -1536,9 +1544,20 @@ function copyFallback(text) {
   return ok;
 }
 
+/**
+ * Подзаголовок в связке «Meteo Dynamics — …». Отдельно, вне этой конструкции,
+ * используется исходный t('tagline') с заглавной: в og:description он стоит
+ * самостоятельной фразой, и строчная там читалась бы как обрубок.
+ */
+function taglineAfterDash() {
+  const s = t('tagline');
+  if (!LOWER_AFTER_DASH.has(state.lang)) return s;
+  return s.charAt(0).toLocaleLowerCase(state.lang) + s.slice(1);
+}
+
 /** Название сервиса и что он делает — иначе в мессенджере видна только ссылка. */
 function shareMessage() {
-  return `${APP_NAME} — ${t('tagline')}. ${t('shareText')}`;
+  return `${APP_NAME} — ${taglineAfterDash()}. ${t('shareText')}`;
 }
 
 async function shareApp() {

@@ -67,7 +67,7 @@ const T = {
     tempShort:'Темп.', cloudShort:'Облачность', precShort:'Осадки', windShort:'Ветер',
     legendTitle:'Как читать',
     legendRange:'верхнее число — минимум, нижнее — максимум среди всех обновлений прогноза на этот час. Стрелка — куда сместился прогноз от самого раннего обновления к свежему.',
-    legendTap:'Нажмите на час — раскроются графики: как менялось предсказание день за днём.',
+    legendTap:'Нажмите на час — раскроются графики: как менялся прогноз день за днём.',
     spreadMost:'{m}: наибольший разброс — {v} {u} по {n} обновлениям.',
     spreadSame:'Все обновления вернули одинаковые значения. Для дальних дат это значит, что независимых прогнозов ещё нет — сравнивать пока не с чем.',
     fcFrom:'Прогноз от {d}', fcNow:'Актуальный прогноз',
@@ -92,6 +92,7 @@ const T = {
     installLeft:'Напоминание {n} из 5 — потом исчезнет',
     tagline:'Как меняется прогноз погоды',
     metaDescr:'Как менялся прогноз на каждый час за последние восемь обновлений модели: разброс, тренд и графики. Данные Open-Meteo, работает целиком в браузере.',
+    shareText:'Показывает разброс между обновлениями модели на каждый час — видно, насколько прогнозу можно верить.',
     src:'Данные: Open-Meteo, CC BY 4.0. Работает полностью в браузере, без сервера.',
   },
   en: {
@@ -129,6 +130,7 @@ const T = {
     installLeft:'Reminder {n} of 5 — then it stops',
     tagline:'Track how weather forecasts change',
     metaDescr:'See how the forecast for each hour changed across the last eight model updates: spread, trend and charts. Open-Meteo data, runs entirely in your browser.',
+    shareText:'Shows the spread between model updates for every hour, so you can see how much to trust the forecast.',
     src:'Data: Open-Meteo, CC BY 4.0. Runs entirely in the browser, no server.',
   },
   uk: {
@@ -141,7 +143,7 @@ const T = {
     tempShort:'Темп.', cloudShort:'Хмарність', precShort:'Опади', windShort:'Вітер',
     legendTitle:'Як читати',
     legendRange:'верхнє число — мінімум, нижнє — максимум серед усіх оновлень прогнозу на цю годину. Стрілка — куди змістився прогноз від найранішого оновлення до свіжого.',
-    legendTap:'Натисніть на годину — розкриються графіки: як змінювалося передбачення день за днем.',
+    legendTap:'Натисніть на годину — розкриються графіки: як змінювався прогноз день за днем.',
     spreadMost:'{m}: найбільший розкид — {v} {u} за {n} оновленнями.',
     spreadSame:'Усі оновлення повернули однакові значення. Для віддалених дат це означає, що незалежних прогнозів ще немає — порівнювати нема з чим.',
     fcFrom:'Прогноз від {d}', fcNow:'Актуальний прогноз',
@@ -166,6 +168,7 @@ const T = {
     installLeft:'Нагадування {n} з 5 — потім зникне',
     tagline:'Як змінюється прогноз погоди',
     metaDescr:'Як змінювався прогноз на кожну годину за останні вісім оновлень моделі: розкид, тренд і графіки. Дані Open-Meteo, працює повністю у браузері.',
+    shareText:'Показує розкид між оновленнями моделі на кожну годину — видно, наскільки прогнозу можна вірити.',
     src:'Дані: Open-Meteo, CC BY 4.0. Працює повністю у браузері, без сервера.',
   },
   de: {
@@ -203,6 +206,7 @@ const T = {
     installLeft:'Hinweis {n} von 5 — danach nicht mehr',
     tagline:'Wie sich Wettervorhersagen ändern',
     metaDescr:'Wie sich die Vorhersage für jede Stunde über die letzten acht Modell-Aktualisierungen verändert hat: Spannweite, Trend und Diagramme. Open-Meteo-Daten, läuft komplett im Browser.',
+    shareText:'Zeigt die Spannweite zwischen Modell-Aktualisierungen für jede Stunde — so sieht man, wie verlässlich die Vorhersage ist.',
     src:'Daten: Open-Meteo, CC BY 4.0. Läuft vollständig im Browser, ohne Server.',
   },
   fr: {
@@ -240,6 +244,7 @@ const T = {
     installLeft:'Rappel {n} sur 5 — puis il disparaît',
     tagline:'Comment les prévisions météo évoluent',
     metaDescr:'Comment la prévision de chaque heure a évolué sur les huit dernières mises à jour du modèle : écart, tendance et graphiques. Données Open-Meteo, tout se passe dans le navigateur.',
+    shareText:'Montre l’écart entre les mises à jour du modèle pour chaque heure — on voit à quel point la prévision est fiable.',
     src:'Données : Open-Meteo, CC BY 4.0. Fonctionne entièrement dans le navigateur.',
   },
   es: {
@@ -277,6 +282,7 @@ const T = {
     installLeft:'Aviso {n} de 5 — después desaparece',
     tagline:'Cómo cambian las previsiones del tiempo',
     metaDescr:'Cómo cambió la previsión de cada hora en las últimas ocho actualizaciones del modelo: dispersión, tendencia y gráficos. Datos de Open-Meteo, funciona íntegramente en el navegador.',
+    shareText:'Muestra la dispersión entre actualizaciones del modelo para cada hora, para ver cuánto se puede confiar en la previsión.',
     src:'Datos: Open-Meteo, CC BY 4.0. Funciona íntegramente en el navegador.',
   },
   pt: {
@@ -314,6 +320,7 @@ const T = {
     installLeft:'Aviso {n} de 5 — depois desaparece',
     tagline:'Como mudam as previsões do tempo',
     metaDescr:'Como a previsão de cada hora mudou nas últimas oito atualizações do modelo: dispersão, tendência e gráficos. Dados Open-Meteo, funciona inteiramente no navegador.',
+    shareText:'Mostra a dispersão entre atualizações do modelo para cada hora, para ver o quanto se pode confiar na previsão.',
     src:'Dados: Open-Meteo, CC BY 4.0. Funciona inteiramente no navegador.',
   },
   it: {
@@ -351,6 +358,7 @@ const T = {
     installLeft:'Promemoria {n} di 5 — poi sparisce',
     tagline:'Come cambiano le previsioni meteo',
     metaDescr:'Come è cambiata la previsione di ogni ora negli ultimi otto aggiornamenti del modello: escursione, tendenza e grafici. Dati Open-Meteo, funziona interamente nel browser.',
+    shareText:'Mostra l’escursione tra gli aggiornamenti del modello per ogni ora, così si vede quanto è affidabile la previsione.',
     src:'Dati: Open-Meteo, CC BY 4.0. Funziona interamente nel browser.',
   },
   pl: {
@@ -388,6 +396,7 @@ const T = {
     installLeft:'Przypomnienie {n} z 5 — potem zniknie',
     tagline:'Jak zmieniają się prognozy pogody',
     metaDescr:'Jak zmieniała się prognoza na każdą godzinę w ostatnich ośmiu aktualizacjach modelu: rozrzut, trend i wykresy. Dane Open-Meteo, działa w całości w przeglądarce.',
+    shareText:'Pokazuje rozrzut między aktualizacjami modelu dla każdej godziny — widać, na ile można zaufać prognozie.',
     src:'Dane: Open-Meteo, CC BY 4.0. Działa w całości w przeglądarce.',
   },
   lv: {
@@ -425,6 +434,7 @@ const T = {
     installLeft:'Atgādinājums {n} no 5 — pēc tam pazudīs',
     tagline:'Kā mainās laika prognozes',
     metaDescr:'Kā mainījās prognoze katrai stundai pēdējos astoņos modeļa atjauninājumos: izkliede, tendence un grafiki. Open-Meteo dati, darbojas pilnībā pārlūkā.',
+    shareText:'Rāda izkliedi starp modeļa atjauninājumiem katrai stundai — redzams, cik prognozei var uzticēties.',
     src:'Dati: Open-Meteo, CC BY 4.0. Darbojas pilnībā pārlūkā, bez servera.',
   },
   lt: {
@@ -462,6 +472,7 @@ const T = {
     installLeft:'Priminimas {n} iš 5 — paskui dings',
     tagline:'Kaip kinta oro prognozės',
     metaDescr:'Kaip kito kiekvienos valandos prognozė per aštuonis paskutinius modelio atnaujinimus: sklaida, tendencija ir grafikai. Open-Meteo duomenys, veikia visiškai naršyklėje.',
+    shareText:'Rodo sklaidą tarp modelio atnaujinimų kiekvienai valandai — matosi, kiek prognoze galima tikėti.',
     src:'Duomenys: Open-Meteo, CC BY 4.0. Veikia visiškai naršyklėje, be serverio.',
   },
   et: {
@@ -499,6 +510,7 @@ const T = {
     installLeft:'Meeldetuletus {n} / 5 — seejärel kaob',
     tagline:'Kuidas ilmaprognoosid muutuvad',
     metaDescr:'Kuidas iga tunni prognoos muutus viimase kaheksa mudeliuuenduse jooksul: hajuvus, trend ja graafikud. Open-Meteo andmed, töötab täielikult brauseris.',
+    shareText:'Näitab hajuvust mudeliuuenduste vahel iga tunni kohta — näed, kui usaldusväärne prognoos on.',
     src:'Andmed: Open-Meteo, CC BY 4.0. Töötab täielikult brauseris, ilma serverita.',
   },
   tr: {
@@ -536,6 +548,7 @@ const T = {
     installLeft:'{n}/5 hatırlatma — sonra kaybolur',
     tagline:'Hava tahminleri nasıl değişiyor',
     metaDescr:'Her saatin tahmini son sekiz model güncellemesinde nasıl değişti: aralık, eğilim ve grafikler. Open-Meteo verileri, tamamen tarayıcıda çalışır.',
+    shareText:'Her saat için model güncellemeleri arasındaki aralığı gösterir — tahmine ne kadar güvenilebileceği görülür.',
     src:'Veri: Open-Meteo, CC BY 4.0. Tamamen tarayıcıda çalışır, sunucusuz.',
   },
   zh: {
@@ -573,6 +586,7 @@ const T = {
     installLeft:'第 {n}/5 次提醒，之后不再显示',
     tagline:'天气预报如何变化',
     metaDescr:'查看每个小时的预报在最近八次模型更新中如何变化：分歧范围、趋势和图表。数据来自 Open-Meteo，完全在浏览器中运行。',
+    shareText:'显示每个小时在各次模型更新之间的分歧范围，一眼看出这份预报有多可信。',
     src:'数据：Open-Meteo，CC BY 4.0。完全在浏览器中运行，无需服务器。',
   },
   ja: {
@@ -610,6 +624,7 @@ const T = {
     installLeft:'{n}/5 回目の案内 — 以降は表示しません',
     tagline:'天気予報はどう変わるか',
     metaDescr:'各時刻の予報が直近8回のモデル更新でどう変わったかを表示します。幅、傾向、グラフ。Open-Meteo のデータ、ブラウザだけで動作します。',
+    shareText:'各時刻についてモデル更新間の幅を表示し、その予報をどれだけ信頼できるかがわかります。',
     src:'データ: Open-Meteo, CC BY 4.0。サーバーなしでブラウザ内だけで動作します。',
   },
   ar: {
@@ -647,6 +662,7 @@ const T = {
     installLeft:'التذكير {n} من 5 — ثم يختفي',
     tagline:'كيف تتغير توقعات الطقس',
     metaDescr:'كيف تغيّر التوقع لكل ساعة خلال آخر ثمانية تحديثات للنموذج: المدى والاتجاه والرسوم البيانية. بيانات Open-Meteo، يعمل بالكامل في المتصفح.',
+    shareText:'يعرض التباين بين تحديثات النموذج لكل ساعة، لترى مدى إمكانية الثقة بالتوقع.',
     src:'البيانات: Open-Meteo، CC BY 4.0. يعمل بالكامل داخل المتصفح دون خادم.',
   },
 };
@@ -1520,13 +1536,18 @@ function copyFallback(text) {
   return ok;
 }
 
+/** Название сервиса и что он делает — иначе в мессенджере видна только ссылка. */
+function shareMessage() {
+  return `${APP_NAME} — ${t('tagline')}. ${t('shareText')}`;
+}
+
 async function shareApp() {
   const url = location.href;
 
   // На телефонах открывается системное меню «Поделиться»
   if (navigator.share) {
     try {
-      await navigator.share({ title: document.title, text: t('legendTap'), url });
+      await navigator.share({ title: APP_NAME, text: shareMessage(), url });
       return;
     } catch (err) {
       if (err && err.name === 'AbortError') return;   // пользователь закрыл меню

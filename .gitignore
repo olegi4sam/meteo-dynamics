@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+
+# Редакторы
+.vscode/
+.idea/
+*.swp

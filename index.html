@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr" data-theme="auto">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Meteo Dynamics — Track how weather forecasts change</title>
+  <meta name="description" content="See how the forecast for each hour changed across the last eight model updates: spread, trend and charts. Open-Meteo data, runs entirely in your browser.">
+  <meta name="theme-color" content="#e2e0da">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Meteo Dynamics">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Для превью при отправке ссылки -->
+  <meta property="og:title" content="Meteo Dynamics">
+  <meta property="og:description" content="Track how weather forecasts change">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><text y='14' font-size='14'>🌦️</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'><rect width='180' height='180' rx='40' fill='%23e2e0da'/><text x='90' y='128' font-size='104' text-anchor='middle'>🌦️</text></svg>">
+</head>
+<body>
+
+<!-- ========== Иконки ========== -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <symbol id="i-temp" viewBox="0 0 24 24">
+    <path d="M10 13.6V5a2 2 0 1 1 4 0v8.6a4 4 0 1 1-4 0z"/>
+    <path d="M15.5 6h3M15.5 9h3M15.5 12h3"/>
+  </symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24">
+    <path d="M7 18h10a4 4 0 0 0 .4-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7z"/>
+  </symbol>
+  <symbol id="i-prec" viewBox="0 0 24 24">
+    <path d="M12 3.5c3 4 5.5 6.7 5.5 9.7a5.5 5.5 0 0 1-11 0c0-3 2.5-5.7 5.5-9.7z"/>
+  </symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24">
+    <path d="M3 8h9a3 3 0 1 0-3-3M3 12h13a3 3 0 1 1-3 3M3 16h7"/>
+  </symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24">
+    <path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11z"/>
+    <circle cx="12" cy="10" r="2.6"/>
+  </symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="3.2"/>
+    <path d="M19.4 15a1.6 1.6 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.6 1.6 0 0 0-1.8-.3 1.6 1.6 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1A1.6 1.6 0 0 0 9 19.4a1.6 1.6 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.6 1.6 0 0 0 .3-1.8 1.6 1.6 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1A1.6 1.6 0 0 0 4.6 9a1.6 1.6 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.6 1.6 0 0 0 1.8.3H9a1.6 1.6 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.6 1.6 0 0 0 1 1.5 1.6 1.6 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.6 1.6 0 0 0-.3 1.8V9a1.6 1.6 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.6 1.6 0 0 0-1.5 1z"/>
+  </symbol>
+  <symbol id="i-share" viewBox="0 0 24 24">
+    <circle cx="6" cy="12" r="2.5"/>
+    <circle cx="18" cy="6" r="2.5"/>
+    <circle cx="18" cy="18" r="2.5"/>
+    <path d="M8.24 10.88 15.76 7.12M8.24 13.12 15.76 16.88"/>
+  </symbol>
+  <symbol id="i-plus-square" viewBox="0 0 24 24">
+    <rect x="3.5" y="3.5" width="17" height="17" rx="4"/>
+    <path d="M12 8.5v7M8.5 12h7"/>
+  </symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+</svg>
+
+<a class="skip-link" href="#hours" data-i18n="skipLink">Перейти к прогнозу</a>
+
+<!-- ========== Шапка ========== -->
+<header class="topbar">
+  <div class="topbar__row">
+    <button type="button" id="placeBtn" class="ctrl ctrl--place"
+            aria-expanded="false" aria-controls="placePanel">
+      <svg class="ctrl__ico" aria-hidden="true"><use href="#i-pin"/></svg>
+      <span class="ctrl__label" id="placeName">…</span>
+      <span class="ctrl__caret" aria-hidden="true">▾</span>
+    </button>
+
+    <div class="topbar__tools">
+      <button type="button" id="enBtn" class="ctrl ctrl--en" hidden
+              title="Switch to English">EN</button>
+      <button type="button" id="shareBtn" class="icon-btn">
+        <svg class="icon-btn__ico" aria-hidden="true"><use href="#i-share"/></svg>
+      </button>
+      <button type="button" id="prefsBtn" class="icon-btn"
+              aria-expanded="false" aria-controls="prefsPanel">
+        <svg class="icon-btn__ico" aria-hidden="true"><use href="#i-gear"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <p class="place__sub" id="placeSub"></p>
+
+  <!-- Панель локации -->
+  <div class="panel" id="placePanel" hidden>
+    <button type="button" id="detectBtn" class="panel__detect">
+      <svg class="panel__pin" aria-hidden="true"><use href="#i-pin"/></svg>
+      <span id="detectLabel" data-i18n="detectBtn">Определить моё местоположение</span>
+    </button>
+
+    <label class="panel__label" for="searchInput" data-i18n="findCity">Найти город</label>
+    <input type="search" id="searchInput" class="panel__input" autocomplete="off" enterkeyhint="search">
+    <div class="panel__results" id="searchResults" role="listbox"></div>
+
+    <p class="panel__label" data-i18n="quickPick">Быстрый выбор</p>
+    <div class="panel__presets" id="presetList"></div>
+  </div>
+
+  <!-- Настройки: язык, единицы, тема -->
+  <div class="panel" id="prefsPanel" hidden>
+    <p class="panel__head" data-i18n="settings">Настройки</p>
+
+    <p class="panel__label" data-i18n="language">Язык</p>
+    <div class="panel__langs" id="langList" role="listbox"></div>
+
+    <p class="panel__label panel__label--sep" data-i18n="units">Единицы</p>
+    <div class="units" id="unitList"></div>
+
+    <p class="panel__label panel__label--sep" data-i18n="theme">Оформление</p>
+    <div class="units" id="themeList"></div>
+  </div>
+</header>
+
+<!-- ========== Полоса дат ========== -->
+<nav class="dates" id="dateStrip"></nav>
+
+<!-- ========== Показатели ========== -->
+<div class="metricbar" id="metricBar" role="group"></div>
+
+<!-- ========== Предложение добавить на главный экран ========== -->
+<aside class="install" id="installBar" hidden>
+  <svg class="install__ico" aria-hidden="true"><use href="#i-plus-square"/></svg>
+  <div class="install__body">
+    <p class="install__title" id="installTitle"></p>
+    <p class="install__text" id="installText"></p>
+    <p class="install__left" id="installLeft"></p>
+  </div>
+  <div class="install__actions">
+    <button type="button" class="install__go" id="installGo" hidden></button>
+    <button type="button" class="install__close" id="installClose" aria-label="×">
+      <svg aria-hidden="true"><use href="#i-close"/></svg>
+    </button>
+  </div>
+</aside>
+
+<!-- ========== Часы ========== -->
+<main id="hours" class="hours" aria-live="polite"></main>
+
+<!-- ========== Пояснение ========== -->
+<footer class="footer">
+  <div class="legend">
+    <p class="legend__title" data-i18n="legendTitle">Как читать</p>
+    <p class="legend__row">
+      <span class="legend__demo" id="legendDemo" aria-hidden="true"></span>
+      <span data-i18n="legendRange"></span>
+    </p>
+    <p class="legend__row" data-i18n="legendTap"></p>
+  </div>
+  <p class="footer__src" id="footerSrc"></p>
+</footer>
+
+<div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+<div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+<script src="app.js"></script>
+</body>
+</html>

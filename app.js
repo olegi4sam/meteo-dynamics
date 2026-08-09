@@ -100,7 +100,8 @@ const T = {
     installLeft:'Напоминание {n} из 5 — потом исчезнет',
     tagline:'Как меняется прогноз погоды',
     metaDescr:'Как менялся прогноз на каждый час за последние восемь обновлений модели: разброс, тренд и графики. Данные Open-Meteo, работает целиком в браузере.',
-    shareText:'Показывает разброс между обновлениями модели на каждый час — видно динамику прогноза.',
+    shareLine1:'показывает динамику прогноза погоды.',
+    shareLine2:'Видно на каждый час, как менялось предсказание модели.',
     src:'Данные: Open-Meteo, CC BY 4.0. Работает полностью в браузере, без сервера.',
   },
   en: {
@@ -138,7 +139,8 @@ const T = {
     installLeft:'Reminder {n} of 5 — then it stops',
     tagline:'Track how weather forecasts change',
     metaDescr:'See how the forecast for each hour changed across the last eight model updates: spread, trend and charts. Open-Meteo data, runs entirely in your browser.',
-    shareText:'Shows the spread between model updates for every hour — you can see the forecast dynamics.',
+    shareLine1:'shows the dynamics of weather forecasts.',
+    shareLine2:'For every hour you can see how the model’s prediction changed.',
     src:'Data: Open-Meteo, CC BY 4.0. Runs entirely in the browser, no server.',
   },
   uk: {
@@ -176,7 +178,8 @@ const T = {
     installLeft:'Нагадування {n} з 5 — потім зникне',
     tagline:'Як змінюється прогноз погоди',
     metaDescr:'Як змінювався прогноз на кожну годину за останні вісім оновлень моделі: розкид, тренд і графіки. Дані Open-Meteo, працює повністю у браузері.',
-    shareText:'Показує розкид між оновленнями моделі на кожну годину — видно динаміку прогнозу.',
+    shareLine1:'показує динаміку прогнозу погоди.',
+    shareLine2:'Видно на кожну годину, як змінювалося передбачення моделі.',
     src:'Дані: Open-Meteo, CC BY 4.0. Працює повністю у браузері, без сервера.',
   },
   de: {
@@ -214,7 +217,8 @@ const T = {
     installLeft:'Hinweis {n} von 5 — danach nicht mehr',
     tagline:'Wie sich Wettervorhersagen ändern',
     metaDescr:'Wie sich die Vorhersage für jede Stunde über die letzten acht Modell-Aktualisierungen verändert hat: Spannweite, Trend und Diagramme. Open-Meteo-Daten, läuft komplett im Browser.',
-    shareText:'Zeigt die Spannweite zwischen Modell-Aktualisierungen für jede Stunde und damit die Dynamik der Vorhersage.',
+    shareLine1:'zeigt die Dynamik von Wettervorhersagen.',
+    shareLine2:'Für jede Stunde ist zu sehen, wie sich die Modellvorhersage verändert hat.',
     src:'Daten: Open-Meteo, CC BY 4.0. Läuft vollständig im Browser, ohne Server.',
   },
   fr: {
@@ -252,7 +256,8 @@ const T = {
     installLeft:'Rappel {n} sur 5 — puis il disparaît',
     tagline:'Comment les prévisions météo évoluent',
     metaDescr:'Comment la prévision de chaque heure a évolué sur les huit dernières mises à jour du modèle : écart, tendance et graphiques. Données Open-Meteo, tout se passe dans le navigateur.',
-    shareText:'Montre l’écart entre les mises à jour du modèle pour chaque heure — la dynamique de la prévision devient visible.',
+    shareLine1:'montre la dynamique des prévisions météo.',
+    shareLine2:'Pour chaque heure, on voit comment la prédiction du modèle a évolué.',
     src:'Données : Open-Meteo, CC BY 4.0. Fonctionne entièrement dans le navigateur.',
   },
   es: {
@@ -290,7 +295,8 @@ const T = {
     installLeft:'Aviso {n} de 5 — después desaparece',
     tagline:'Cómo cambian las previsiones del tiempo',
     metaDescr:'Cómo cambió la previsión de cada hora en las últimas ocho actualizaciones del modelo: dispersión, tendencia y gráficos. Datos de Open-Meteo, funciona íntegramente en el navegador.',
-    shareText:'Muestra la dispersión entre actualizaciones del modelo para cada hora — se ve la dinámica de la previsión.',
+    shareLine1:'muestra la dinámica de las previsiones del tiempo.',
+    shareLine2:'Para cada hora se ve cómo cambió la predicción del modelo.',
     src:'Datos: Open-Meteo, CC BY 4.0. Funciona íntegramente en el navegador.',
   },
   pt: {
@@ -328,7 +334,8 @@ const T = {
     installLeft:'Aviso {n} de 5 — depois desaparece',
     tagline:'Como mudam as previsões do tempo',
     metaDescr:'Como a previsão de cada hora mudou nas últimas oito atualizações do modelo: dispersão, tendência e gráficos. Dados Open-Meteo, funciona inteiramente no navegador.',
-    shareText:'Mostra a dispersão entre atualizações do modelo para cada hora — vê-se a dinâmica da previsão.',
+    shareLine1:'mostra a dinâmica das previsões do tempo.',
+    shareLine2:'Para cada hora vê-se como a predição do modelo mudou.',
     src:'Dados: Open-Meteo, CC BY 4.0. Funciona inteiramente no navegador.',
   },
   it: {
@@ -366,7 +373,8 @@ const T = {
     installLeft:'Promemoria {n} di 5 — poi sparisce',
     tagline:'Come cambiano le previsioni meteo',
     metaDescr:'Come è cambiata la previsione di ogni ora negli ultimi otto aggiornamenti del modello: escursione, tendenza e grafici. Dati Open-Meteo, funziona interamente nel browser.',
-    shareText:'Mostra l’escursione tra gli aggiornamenti del modello per ogni ora — si vede la dinamica della previsione.',
+    shareLine1:'mostra la dinamica delle previsioni meteo.',
+    shareLine2:'Per ogni ora si vede come è cambiata la predizione del modello.',
     src:'Dati: Open-Meteo, CC BY 4.0. Funziona interamente nel browser.',
   },
   pl: {
@@ -404,7 +412,8 @@ const T = {
     installLeft:'Przypomnienie {n} z 5 — potem zniknie',
     tagline:'Jak zmieniają się prognozy pogody',
     metaDescr:'Jak zmieniała się prognoza na każdą godzinę w ostatnich ośmiu aktualizacjach modelu: rozrzut, trend i wykresy. Dane Open-Meteo, działa w całości w przeglądarce.',
-    shareText:'Pokazuje rozrzut między aktualizacjami modelu dla każdej godziny — widać dynamikę prognozy.',
+    shareLine1:'pokazuje dynamikę prognoz pogody.',
+    shareLine2:'Dla każdej godziny widać, jak zmieniała się predykcja modelu.',
     src:'Dane: Open-Meteo, CC BY 4.0. Działa w całości w przeglądarce.',
   },
   lv: {
@@ -442,7 +451,8 @@ const T = {
     installLeft:'Atgādinājums {n} no 5 — pēc tam pazudīs',
     tagline:'Kā mainās laika prognozes',
     metaDescr:'Kā mainījās prognoze katrai stundai pēdējos astoņos modeļa atjauninājumos: izkliede, tendence un grafiki. Open-Meteo dati, darbojas pilnībā pārlūkā.',
-    shareText:'Rāda izkliedi starp modeļa atjauninājumiem katrai stundai — redzama prognozes dinamika.',
+    shareLine1:'rāda laika prognožu dinamiku.',
+    shareLine2:'Katrai stundai redzams, kā mainījās modeļa prognoze.',
     src:'Dati: Open-Meteo, CC BY 4.0. Darbojas pilnībā pārlūkā, bez servera.',
   },
   lt: {
@@ -480,7 +490,8 @@ const T = {
     installLeft:'Priminimas {n} iš 5 — paskui dings',
     tagline:'Kaip kinta oro prognozės',
     metaDescr:'Kaip kito kiekvienos valandos prognozė per aštuonis paskutinius modelio atnaujinimus: sklaida, tendencija ir grafikai. Open-Meteo duomenys, veikia visiškai naršyklėje.',
-    shareText:'Rodo sklaidą tarp modelio atnaujinimų kiekvienai valandai — matosi prognozės dinamika.',
+    shareLine1:'rodo oro prognozių dinamiką.',
+    shareLine2:'Kiekvienai valandai matosi, kaip kito modelio prognozė.',
     src:'Duomenys: Open-Meteo, CC BY 4.0. Veikia visiškai naršyklėje, be serverio.',
   },
   et: {
@@ -518,7 +529,8 @@ const T = {
     installLeft:'Meeldetuletus {n} / 5 — seejärel kaob',
     tagline:'Kuidas ilmaprognoosid muutuvad',
     metaDescr:'Kuidas iga tunni prognoos muutus viimase kaheksa mudeliuuenduse jooksul: hajuvus, trend ja graafikud. Open-Meteo andmed, töötab täielikult brauseris.',
-    shareText:'Näitab hajuvust mudeliuuenduste vahel iga tunni kohta — prognoosi dünaamika on näha.',
+    shareLine1:'näitab ilmaprognooside dünaamikat.',
+    shareLine2:'Iga tunni kohta on näha, kuidas mudeli ennustus muutus.',
     src:'Andmed: Open-Meteo, CC BY 4.0. Töötab täielikult brauseris, ilma serverita.',
   },
   tr: {
@@ -556,7 +568,8 @@ const T = {
     installLeft:'{n}/5 hatırlatma — sonra kaybolur',
     tagline:'Hava tahminleri nasıl değişiyor',
     metaDescr:'Her saatin tahmini son sekiz model güncellemesinde nasıl değişti: aralık, eğilim ve grafikler. Open-Meteo verileri, tamamen tarayıcıda çalışır.',
-    shareText:'Her saat için model güncellemeleri arasındaki aralığı gösterir — tahminin dinamiği görünür hale gelir.',
+    shareLine1:'hava tahminlerinin dinamiğini gösterir.',
+    shareLine2:'Her saat için modelin öngörüsünün nasıl değiştiği görülür.',
     src:'Veri: Open-Meteo, CC BY 4.0. Tamamen tarayıcıda çalışır, sunucusuz.',
   },
   zh: {
@@ -594,7 +607,8 @@ const T = {
     installLeft:'第 {n}/5 次提醒，之后不再显示',
     tagline:'天气预报如何变化',
     metaDescr:'查看每个小时的预报在最近八次模型更新中如何变化：分歧范围、趋势和图表。数据来自 Open-Meteo，完全在浏览器中运行。',
-    shareText:'显示每个小时在各次模型更新之间的分歧范围，一眼看出预报的变化动态。',
+    shareLine1:'展示天气预报的变化动态。',
+    shareLine2:'可以看到每个小时模型预测的变化过程。',
     src:'数据：Open-Meteo，CC BY 4.0。完全在浏览器中运行，无需服务器。',
   },
   ja: {
@@ -632,7 +646,8 @@ const T = {
     installLeft:'{n}/5 回目の案内 — 以降は表示しません',
     tagline:'天気予報はどう変わるか',
     metaDescr:'各時刻の予報が直近8回のモデル更新でどう変わったかを表示します。幅、傾向、グラフ。Open-Meteo のデータ、ブラウザだけで動作します。',
-    shareText:'各時刻についてモデル更新間の幅を表示し、予報の推移が一目でわかります。',
+    shareLine1:'は天気予報の推移を表示します。',
+    shareLine2:'各時刻について、モデルの予測がどう変わったかがわかります。',
     src:'データ: Open-Meteo, CC BY 4.0。サーバーなしでブラウザ内だけで動作します。',
   },
   ar: {
@@ -670,7 +685,8 @@ const T = {
     installLeft:'التذكير {n} من 5 — ثم يختفي',
     tagline:'كيف تتغير توقعات الطقس',
     metaDescr:'كيف تغيّر التوقع لكل ساعة خلال آخر ثمانية تحديثات للنموذج: المدى والاتجاه والرسوم البيانية. بيانات Open-Meteo، يعمل بالكامل في المتصفح.',
-    shareText:'يعرض التباين بين تحديثات النموذج لكل ساعة — فتظهر ديناميكية التوقع.',
+    shareLine1:'يعرض ديناميكية توقعات الطقس.',
+    shareLine2:'يمكن رؤية كيف تغيّر تنبؤ النموذج لكل ساعة.',
     src:'البيانات: Open-Meteo، CC BY 4.0. يعمل بالكامل داخل المتصفح دون خادم.',
   },
 };
@@ -1557,16 +1573,19 @@ function taglineAfterDash() {
 
 /** Название сервиса и что он делает — иначе в мессенджере видна только ссылка. */
 function shareMessage() {
-  return `${APP_NAME} — ${taglineAfterDash()}. ${t('shareText')}`;
+  return `${APP_NAME} ${t('shareLine1')}\n${t('shareLine2')}\n\n${location.href}`;
 }
 
 async function shareApp() {
-  const url = location.href;
+  const message = shareMessage();
 
-  // На телефонах открывается системное меню «Поделиться»
+  // На телефонах открывается системное меню «Поделиться».
+  // Ссылка лежит внутри text, а не отдельным полем url: иначе платформа
+  // склеивает их по-своему и пустая строка перед ссылкой пропадает.
+  // Передавать оба поля нельзя — ссылка задвоится.
   if (navigator.share) {
     try {
-      await navigator.share({ title: APP_NAME, text: shareMessage(), url });
+      await navigator.share({ title: APP_NAME, text: message });
       return;
     } catch (err) {
       if (err && err.name === 'AbortError') return;   // пользователь закрыл меню
@@ -1574,12 +1593,12 @@ async function shareApp() {
   }
 
   try {
-    await navigator.clipboard.writeText(url);
+    await navigator.clipboard.writeText(message);
     toast(t('shareCopied'));
     return;
   } catch (_) {}
 
-  toast(copyFallback(url) ? t('shareCopied') : url, 6000);
+  toast(copyFallback(message) ? t('shareCopied') : location.href, 6000);
 }
 
 /* --------------------------------------------------------------------------
